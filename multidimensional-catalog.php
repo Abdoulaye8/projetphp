@@ -57,11 +57,6 @@ $products = [
             text-align: center;
             box-sizing: border-box;
         }
-
-        .product:last-child {
-            margin-right: 0;
-        }
-
         .product img {
             max-width: 100%;
             height: auto;
