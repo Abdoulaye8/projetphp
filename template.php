@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mytemplate</title>
+    <link rel="stylesheet" href="./template.css">
+</head>
+<body>
+    
+<header>
+    <nav>
+        <a href="header.php">
+            <img src="templelogo.jpg" alt="logo de ma page">
+        </a>
+        <ul>
+            <li><a href="header.php">accueil</a></li>
+            <li><a href="footer.php">footer</a></li>
+            <li><a href="pageverte.php">pageverte</a></li>
+        </ul>
+
+    </nav>
+</header>
+<main>
+   <?php echo $content ?>
+</main>
+<footer>&#169; H2PROG</footer>
+</body>
+</html>

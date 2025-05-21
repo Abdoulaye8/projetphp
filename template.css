@@ -1,0 +1,25 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    pading:0;
+    background-color: #283645;
+    overflow: hidden;
+}
+li, nav img{
+    float: left;
+}
+li a {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+li a:hover{
+    background-color: aqua;
+}
+footer{
+    background-color: #283645;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
