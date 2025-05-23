@@ -2,21 +2,21 @@
 $products = [
     "iphone16" => [
         "name" => "iPhone 16",
-        "price" => 3999, 
+        "price" => 390099, 
         "weight" => 150, 
         "discount" => 10,
         "picture_url" => "<img src='iphone16.jpg' alt='image iphone16'>"
     ],
     "ipad" => [
         "name" => "iPad",
-        "price" => 1499,
+        "price" => 140099,
         "weight" => 300,
         "discount" => null,
         "picture_url" => "<img src='ipad.jpg' alt='image ipad'>"
     ],
     "iMac" => [
         "name" => "iMac",
-        "price" => 999,
+        "price" => 99009,
         "weight" => 150,
         "discount" => 5,
         "picture_url" => "<img src='imac.jpg' alt='image imac'>"
