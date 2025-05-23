@@ -16,7 +16,7 @@
         <ul>
             <li><a href="header.php">accueil</a></li>
             <li><a href="footer.php">footer</a></li>
-            <li><a href="pageverte.php">pageverte</a></li>
+            <li><a href="multidimensional-catalog.php">mes Produits</a></li>
         </ul>
 
     </nav>

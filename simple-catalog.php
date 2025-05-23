@@ -1,5 +1,5 @@
 <?php
-$produits = ["iphone", "ipad", "iMac"];
+$produits = ["iphone16", "ipad2025", "iMac2024"];
 
 sort($produits);
 
