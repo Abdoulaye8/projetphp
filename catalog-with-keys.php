@@ -1,4 +1,5 @@
 <?php
+require_once 'my-functions.php';
 $products = [
     "iphone16" => [
         "name" => "iPhone 16",

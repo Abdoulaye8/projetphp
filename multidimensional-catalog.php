@@ -1,5 +1,5 @@
 <?php
-
+require_once 'my-functions.php';
 $products = [
     "iPhone 16" => [
         "name" => "iPhone 16",
@@ -25,92 +25,115 @@ $products = [
 ];
 ?>
 
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue des Produits</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(61, 52, 52);
+            line-height: 1.6;
+        }
 
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
 
-    <main>
-        <style>
-            body {
-                font-family: Cambria, Cochin, Georgia;
-                margin: 0;
-                padding: 0;
-                background-color: rgb(61, 52, 52);
-                line-height: 1.6;
-            }
+        .product {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 30%;
+            float: left;
+            margin-right: 5%;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-            .container {
-                width: 80%;
-                margin: 20px auto;
-                overflow: hidden;
-            }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
 
-            .product {
-                border: 1px solid #ddd;
-                background-color: #fff;
-                padding: 20px;
-                margin-bottom: 20px;
-                width: 30%;
-                float: left;
-                margin-right: 5%;
-                text-align: center;
-                box-sizing: border-box;
-            }
+        .product h3 {
+            color: #333;
+            font-size: 18px;
+        }
 
-            .product img {
-                max-width: 100%;
-                height: auto;
-                margin-bottom: 15px;
-            }
+        .product p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
 
-            .product h3 {
-                color: #333;
-                font-size: 18px;
-            }
+        .price {
+            font-weight: bold;
+            color: green;
+        }
 
-            .product p {
-                font-size: 14px;
-                margin: 5px 0;
-            }
+        .discount {
+            color: red;
+            font-weight: bold;
+        }
 
-            .price {
-                font-weight: bold;
-                color: green;
-            }
+        .no-discount {
+            color: gray;
+        }
 
-            .discount {
-                color: red;
-                font-weight: bold;
-            }
+        .order-form {
+            margin-top: 15px;
+        }
 
-            .no-discount {
-                color: gray;
-            }
-        </style>
+        .order-form input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .order-form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .order-form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 
 <body>
     <main>
+        <div class="container">
+            <?php
+            foreach ($products as $product_name => $product) {
+                echo "<div class='product'>";
+                echo "<h3>" . $product_name . "</h3>";
+                echo "<p><strong>Nom :</strong> " . $product["name"] . "</p>";
+                echo "<p><strong>Poids :</strong> " . $product["weight"] . "g</p>";
+                echo "<p><strong>Prix :</strong> <span class='price'>" . $product["price"] / 100 . "€</span></p>";
+                echo "<p><strong>Remise :</strong> " . ($product["discount"] ? "<span class='discount'>" . $product["discount"] . "%</span>" : "<span class='no-discount'>Aucune</span>") . "</p>";
+                echo "<p><img src='" . $product["picture_url"] . "' alt='" . $product["name"] . "' /></p>";
 
-    <div class="container">
-        <?php
+                // le formulaire
+                echo "<form class='order-form' action='cart.php' method='POST'>";
+                echo "<input type='hidden' name='product_name' value='" . htmlspecialchars($product["name"]) . "'>";
+                echo "<label for='quantity'>Quantité :</label>";
+                echo "<input type='number' name='quantity' id='quantity' value='1' min='1' required>";
+                echo "<input type='submit' value='Commander'>";
+                echo "</form>";
 
-        foreach ($products as $product_name => $product) {
-            echo "<div class='product'>";
-            echo "<h3>" . $product_name . "</h3>";
-            echo "<p><strong>Nom :</strong> " . $product["name"] . "</p>";
-            echo "<p><strong>Poids :</strong> " . $product["weight"] . "g</p>";
-            echo "<p><strong>Prix :</strong> <span class='price'>" . $product["price"] / 100 . "€</span></p>";
-            echo "<p><strong>Remise :</strong> " . ($product["discount"] ? "<span class='discount'>" . $product["discount"] . "%</span>" : "<span class='no-discount'>Aucune</span>") . "</p>";
-            echo "<p><img src='" . $product["picture_url"] . "' alt='" . $product["name"] . "' /></p>";
-            echo "</div>";
-        }
-        ?>
-    </div>
-
+                echo "</div>";
+            }
+            ?>
+        </div>
     </main>
 </body>
