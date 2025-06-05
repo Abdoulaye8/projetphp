@@ -107,10 +107,18 @@ $products = [
         .order-form input[type="submit"]:hover {
             background-color: #218838;
         }
+        .message {
+            background-color: #218838;
+            border: radius 50px;
+        }
     </style>
 </head>
+<div class="message">
+    <center><p>Bienvenue dans la Boutique d'Abdoulaye</p></center>
+</div>
 
 <body>
+  
     <main>
         <div class="container">
             <?php
@@ -136,4 +144,5 @@ $products = [
             ?>
         </div>
     </main>
+    <center><div class="foot"> <footer> Boutique abdoulaye</footer></div></center>
 </body>

@@ -68,6 +68,5 @@ $products = [
             <p><?php echo $product['picture_url']; ?></p>
         </div>
     <?php endforeach; ?>
-
 </body>
 </html>

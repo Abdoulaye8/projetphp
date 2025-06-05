@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./template.css">
 </head>
 <body>
-    
 <header>
     <nav>
         <a href="header.php">
