@@ -11,4 +11,10 @@ function priceExcludingVAT($priceTTCinCents) {
     return $priceHT;
 }
 
+echo "Prix TTC : ";
+formatPrice(1200); 
+
+echo "<br>Prix HT : ";
+priceExcludingVAT(1200); 
+
 ?>
